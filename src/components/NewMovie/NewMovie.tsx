@@ -16,9 +16,9 @@ export const NewMovie: React.FC<newMovieProps> = ({ onAdd }) => {
   const [description, setDescription] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [imdbUrl, setImdbUrl] = useState('');
-  const [imdbId, setimdbId] = useState('');
+  const [imdbId, setImdbId] = useState('');
 
-  const isFormValid = title.trim() && imgUrl.trim() && imdbUrl.trim() && imdbId
+  const isFormValid = title.trim() && imgUrl.trim() && imdbUrl.trim() && imdbId.trim()
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,7 +41,7 @@ export const NewMovie: React.FC<newMovieProps> = ({ onAdd }) => {
     setDescription('');
     setImgUrl('');
     setImdbUrl('');
-    setimdbId('');
+    setImdbId('');
     setCount(prev => prev + 1);
   }
 
@@ -91,7 +91,7 @@ export const NewMovie: React.FC<newMovieProps> = ({ onAdd }) => {
       name="imdbId"
       label="Imdb ID"
       value={imdbId}
-      onChange={(newValue: string) => {setimdbId(newValue)}}
+      onChange={(newValue: string) => {setImdbId(newValue)}}
       required/>
 
       <div className="field is-grouped">
